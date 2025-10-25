@@ -11,7 +11,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/")}>
             <Sparkles className="w-6 h-6 text-accent" />
-            <span className="text-xl font-semibold">NegotiAI</span>
+            <span className="text-xl font-semibold">NegoatAI</span>
           </div>
           
           <div className="hidden md:flex items-center gap-8">
