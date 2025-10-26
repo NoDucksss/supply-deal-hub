@@ -141,18 +141,18 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-secondary">
+    <div className="min-h-screen bg-gradient-to-br from-[#a94442] via-[#f19c93] to-[#b8d4e0]">
       <Navigation />
       
       <main className="pt-24 pb-12">
         <div className="container mx-auto px-6">
-          <div className="mb-8">
+          <div className="mb-8 backdrop-blur-md bg-white/10 rounded-2xl p-6 border border-white/20">
             <h1 className="text-4xl font-light mb-2">Supplier Dashboard</h1>
             <p className="text-muted-foreground">Monitor and manage your supplier ecosystem</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <Card className="p-6 hover:shadow-elegant transition-shadow cursor-pointer">
+            <Card className="p-6 hover:shadow-elegant transition-shadow cursor-pointer backdrop-blur-md bg-white/10 border-white/20">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
                   <Database className="w-5 h-5 text-accent" />
@@ -163,7 +163,7 @@ const Dashboard = () => {
               <p className="text-sm text-muted-foreground">Active integrations</p>
             </Card>
 
-            <Card className="p-6 hover:shadow-elegant transition-shadow cursor-pointer">
+            <Card className="p-6 hover:shadow-elegant transition-shadow cursor-pointer backdrop-blur-md bg-white/10 border-white/20">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-warning/10 flex items-center justify-center">
                   <Shield className="w-5 h-5 text-warning" />
@@ -174,7 +174,7 @@ const Dashboard = () => {
               <p className="text-sm text-muted-foreground">Risks identified</p>
             </Card>
 
-            <Card className="p-6 hover:shadow-elegant transition-shadow cursor-pointer">
+            <Card className="p-6 hover:shadow-elegant transition-shadow cursor-pointer backdrop-blur-md bg-white/10 border-white/20">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-info/10 flex items-center justify-center">
                   <BarChart3 className="w-5 h-5 text-info" />
@@ -185,7 +185,7 @@ const Dashboard = () => {
               <p className="text-sm text-muted-foreground">Average score</p>
             </Card>
 
-            <Card className="p-6 hover:shadow-elegant transition-shadow cursor-pointer">
+            <Card className="p-6 hover:shadow-elegant transition-shadow cursor-pointer backdrop-blur-md bg-white/10 border-white/20">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-success/10 flex items-center justify-center">
                   <FileText className="w-5 h-5 text-success" />
@@ -197,7 +197,7 @@ const Dashboard = () => {
             </Card>
           </div>
 
-          <Card className="p-8">
+          <Card className="p-8 backdrop-blur-md bg-white/10 border-white/20">
             <div className="mb-6">
               <h2 className="text-2xl font-light mb-2">Active Suppliers</h2>
               <p className="text-sm text-muted-foreground">Click on any supplier to view communication</p>

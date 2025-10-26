@@ -18,16 +18,16 @@ const Communication = () => {
   const supplierRisk = searchParams.get("risk") || "LOW RISK";
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-[#a94442] via-[#f19c93] to-[#b8d4e0]">
       <Navigation />
       
       <main className="pt-20">
         {/* Header Section */}
-        <div className="bg-secondary/30 px-6 py-8 mb-8">
+        <div className="backdrop-blur-md bg-white/10 border-white/20 border-b px-6 py-8 mb-8">
           <div className="container mx-auto">
             <Button 
               variant="ghost" 
-              className="mb-6 gap-2 -ml-2"
+              className="mb-6 gap-2 -ml-2 hover:bg-white/10"
               onClick={() => navigate("/dashboard")}
             >
               <ArrowLeft className="w-4 h-4" />
@@ -44,12 +44,12 @@ const Communication = () => {
               </div>
             </div>
             
-            <Badge variant="outline" className="border-success text-success bg-success/5">{supplierRisk}</Badge>
+            <Badge variant="outline" className="border-success text-success bg-success/5 backdrop-blur-sm">{supplierRisk}</Badge>
           </div>
         </div>
 
         {/* Tabs Section */}
-        <div className="bg-background border-b border-border">
+        <div className="backdrop-blur-md bg-white/5 border-b border-white/20">
           <div className="container mx-auto px-6">
             <Tabs defaultValue="communication" className="w-full">
               <TabsList className="bg-transparent border-b-0 h-auto p-0 gap-8">
@@ -74,7 +74,7 @@ const Communication = () => {
               </TabsList>
 
               <TabsContent value="communication" className="mt-0">
-                <div className="bg-secondary/30 rounded-2xl p-8">
+                <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
                   <h2 className="text-2xl font-light mb-8">Recent Communication</h2>
                 
                 <div className="space-y-6">
@@ -135,8 +135,9 @@ const Communication = () => {
               </TabsContent>
 
               <TabsContent value="trends" className="mt-0">
+                <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                <Card className="p-6">
+                <Card className="p-6 backdrop-blur-md bg-white/10 border-white/20">
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-lg font-medium">Negotiation Priorities</h3>
                     <Badge variant="destructive" className="gap-1">
@@ -166,7 +167,7 @@ const Communication = () => {
                   </div>
                 </Card>
 
-                <Card className="p-6">
+                <Card className="p-6 backdrop-blur-md bg-white/10 border-white/20">
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-lg font-medium">New Information</h3>
                     <Badge variant="default" className="bg-info text-info-foreground">
@@ -197,7 +198,7 @@ const Communication = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card className="p-6 hover:shadow-elegant transition-shadow">
+                <Card className="p-6 hover:shadow-elegant transition-shadow backdrop-blur-md bg-white/10 border-white/20">
                   <h4 className="text-sm text-muted-foreground mb-2">Price Competitiveness</h4>
                   <p className="text-3xl font-light mb-2">-8%</p>
                   <p className="text-sm text-muted-foreground">Below market average</p>
@@ -208,7 +209,7 @@ const Communication = () => {
                   </div>
                 </Card>
 
-                <Card className="p-6 hover:shadow-elegant transition-shadow">
+                <Card className="p-6 hover:shadow-elegant transition-shadow backdrop-blur-md bg-white/10 border-white/20">
                   <h4 className="text-sm text-muted-foreground mb-2">Delivery Performance</h4>
                   <p className="text-3xl font-light mb-2">94%</p>
                   <p className="text-sm text-muted-foreground">On-time delivery rate</p>
@@ -219,7 +220,7 @@ const Communication = () => {
                   </div>
                 </Card>
 
-                <Card className="p-6 hover:shadow-elegant transition-shadow">
+                <Card className="p-6 hover:shadow-elegant transition-shadow backdrop-blur-md bg-white/10 border-white/20">
                   <h4 className="text-sm text-muted-foreground mb-2">Contract Terms</h4>
                   <p className="text-3xl font-light mb-2">6</p>
                   <p className="text-sm text-muted-foreground">Negotiable clauses</p>
@@ -230,7 +231,7 @@ const Communication = () => {
                   </div>
                 </Card>
 
-                <Card className="p-6 hover:shadow-elegant transition-shadow">
+                <Card className="p-6 hover:shadow-elegant transition-shadow backdrop-blur-md bg-white/10 border-white/20">
                   <h4 className="text-sm text-muted-foreground mb-2">Quality Score</h4>
                   <p className="text-3xl font-light mb-2">88</p>
                   <p className="text-sm text-muted-foreground">Above industry standard</p>
@@ -241,15 +242,16 @@ const Communication = () => {
                   </div>
                 </Card>
                 </div>
+                </div>
               </TabsContent>
 
               <TabsContent value="history" className="mt-0">
-                <div className="bg-secondary/30 rounded-2xl p-8">
+                <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
                   <h2 className="text-2xl font-light mb-2">Beyond Presence AI Agent Conversations</h2>
                   <p className="text-sm text-muted-foreground mb-8">Conversation transcripts received via email after each session</p>
                 
                 <div className="space-y-6">
-                  <Card className="p-6 bg-muted/30">
+                  <Card className="p-6 backdrop-blur-md bg-white/10 border-white/20">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
@@ -279,7 +281,7 @@ const Communication = () => {
                     </div>
                   </Card>
 
-                  <Card className="p-6 bg-muted/30">
+                  <Card className="p-6 backdrop-blur-md bg-white/10 border-white/20">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
@@ -309,7 +311,7 @@ const Communication = () => {
                     </div>
                   </Card>
 
-                  <Card className="p-6 bg-muted/30">
+                  <Card className="p-6 backdrop-blur-md bg-white/10 border-white/20">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">

@@ -32,7 +32,7 @@ const AvatarDemo = () => {
   };
 
   return (
-    <div className="min-h-screen bg-secondary">
+    <div className="min-h-screen bg-gradient-to-br from-[#a94442] via-[#f19c93] to-[#b8d4e0]">
       <Navigation />
       
       <main className="pt-24 pb-12">
@@ -46,12 +46,12 @@ const AvatarDemo = () => {
             Back to Communication
           </Button>
 
-          <div className="mb-8">
+          <div className="mb-8 backdrop-blur-md bg-white/10 rounded-2xl p-6 border border-white/20">
             <h1 className="text-3xl font-light mb-2">AI Negotiation Assistant</h1>
             <p className="text-muted-foreground">Get real-time insights from your procurement datalake</p>
           </div>
 
-          <Card className="p-8 mb-6">
+          <Card className="p-8 mb-6 backdrop-blur-md bg-white/10 border-white/20">
             {!showLiveDemo ? (
               <div className="aspect-video bg-gradient-to-br from-primary via-primary to-accent/20 rounded-xl flex items-center justify-center">
                 <div className="text-center">
@@ -78,7 +78,7 @@ const AvatarDemo = () => {
             )}
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-6 backdrop-blur-md bg-white/10 border-white/20">
             <h2 className="text-xl font-medium mb-6">Chat with AI Assistant</h2>
             
             <div className="space-y-4 mb-6 max-h-96 overflow-y-auto">

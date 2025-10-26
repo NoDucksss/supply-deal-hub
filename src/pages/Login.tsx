@@ -19,16 +19,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/10"
-        style={{
-          background: 'linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 0%, 98%) 50%, hsl(14, 100%, 95%) 100%)'
-        }}
-      />
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#a94442] via-[#f19c93] to-[#b8d4e0]">
       
       <div className="relative z-10 w-full max-w-md mx-4">
-        <div className="bg-card rounded-2xl p-12 shadow-elegant">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-12 shadow-elegant">
           <div className="flex justify-center mb-8">
             <div className="w-12 h-12 bg-gradient-orange rounded-lg flex items-center justify-center">
               <Sparkles className="w-6 h-6 text-white" />
