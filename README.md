@@ -3,6 +3,29 @@
 
 ---
 
+## 🚀 Getting Started
+
+First setup the cluely which is in another repository then, we can use the application built using Lovable.
+
+1. **Clone our custom Free-Cluely repository**:
+   ```bash
+   git clone https://github.com/bhanuprasanna2001/free-cluely
+   cd free-cluely
+   npm install
+   npm start
+   ```
+
+2. Set .env file in your repo with necessary key
+OPENAI_API_KEY=your_openai_api_key_here
+WEAVIATE_ENDPOINT=your-weaviate.instance
+BEYOND_PRESENCE_API_KEY=your_beyond_presence_key
+LOVABLE_DASHBOARD_URL=https://supply-deal-hub.lovable.app/
+KONTEXT_API_KEYS, URLS etc
+
+4. Upon Navigating the Lovable Dashboard you should be able to login using GMAIL and chat with the Beyond Presence Supplier Agent
+
+---
+
 ## 📌 Problem Statement  
 NeGOATai is designed to help **procurement negotiators** make smarter, faster, and more informed decisions **in real time** with human-in-loop
 Built primarliy **Free-Cluely** an open-source framework, it offers a **secure**, **fast**, and **reliable** alternative for live negotiation support — ensuring that sensitive supplier data stays protected while insights remain instant with added context from **Kontext.Dev** and **Weaviate**
@@ -65,23 +88,4 @@ In industries like aerospace—where every decision impacts performance and cost
 - [Repo: Video-call integration via Beyond Presence API](#)
 
 ---
-
-## 🚀 Getting Started
-
-1. **Clone our custom Free-Cluely repository**:
-   ```bash
-   git clone [https://github.com/YourOrg/your-free-cluely-fork.git](https://github.com/bhanuprasanna2001/free-cluely)
-   cd free-cluely
-   npm install
-   npm run dev
-   ```
-
-2. Set .env file in your repo with necessary key
-OPENAI_API_KEY=your_openai_api_key_here
-WEAVIATE_ENDPOINT=your-weaviate.instance
-BEYOND_PRESENCE_API_KEY=your_beyond_presence_key
-LOVABLE_DASHBOARD_URL=https://supply-deal-hub.lovable.app/
-KONTEXT_API_KEYS, URLS etc
-
-4. Upon Navigating the Lovable Dashboard you should be able to login using GMAIL and chat with the Beyond Presence Supplier Agent
    
