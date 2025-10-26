@@ -52,7 +52,7 @@ const AvatarDemo = () => {
 
           <Card className="p-8 mb-6">
             <iframe
-              src="https://app.beyondpresence.io/agent?key=sk-oJCDoRk6yXQFzBIOn_iv8YvHOQrBntj5yTZcBn6PucM"
+              src="https://bey.chat/343f7414-ed62-4ab5-be1f-c02c5a223eee"
               className="w-full aspect-video rounded-xl"
               allow="microphone; camera"
               title="Beyond Presence AI Avatar"
