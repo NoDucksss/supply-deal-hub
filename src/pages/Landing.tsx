@@ -75,7 +75,7 @@ const Landing = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="bg-primary text-primary-foreground text-center py-2 text-sm">
+      <div className="bg-primary text-slate-200 text-center py-2 text-sm">
         NEGOTIATE FASTER, MAKE STRONGER DECISIONS → AI-POWERED PROCUREMENT INTELLIGENCE → REGISTER FOR FREE
       </div>
       
