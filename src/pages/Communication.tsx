@@ -4,10 +4,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, FileText, TrendingUp, AlertTriangle, CheckCircle2, MessageSquare } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Communication = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  
+  // Get supplier data from URL parameters or use default
+  const supplierName = searchParams.get("supplier") || "Bergmann & Söhne GmbH";
+  const supplierCountry = searchParams.get("country") || "🇩🇪 Germany";
+  const supplierVolume = searchParams.get("volume") || "4.8M €";
+  const supplierTrend = searchParams.get("trend") || "↑ 30%";
+  const supplierRisk = searchParams.get("risk") || "LOW RISK";
 
   return (
     <div className="min-h-screen bg-background">
@@ -31,12 +39,12 @@ const Communication = () => {
                 <span className="text-3xl">⚡</span>
               </div>
               <div>
-                <h1 className="text-4xl font-light mb-2">Bergmann & Söhne GmbH</h1>
-                <p className="text-muted-foreground text-lg">🇩🇪 Germany • Volume (last 6 months): 4.8M € ↑ 30%</p>
+                <h1 className="text-4xl font-light mb-2">{supplierName}</h1>
+                <p className="text-muted-foreground text-lg">{supplierCountry} • Volume (last 6 months): {supplierVolume} {supplierTrend}</p>
               </div>
             </div>
             
-            <Badge variant="outline" className="border-success text-success bg-success/5">LOW RISK</Badge>
+            <Badge variant="outline" className="border-success text-success bg-success/5">{supplierRisk}</Badge>
           </div>
         </div>
 

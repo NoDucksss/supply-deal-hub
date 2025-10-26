@@ -217,10 +217,10 @@ const Dashboard = () => {
                 </thead>
                 <tbody>
                   {suppliers.map((supplier, index) => (
-                    <tr 
+                     <tr 
                       key={index}
                       className="border-b border-border hover:bg-muted/50 cursor-pointer transition-colors"
-                      onClick={() => navigate("/communication")}
+                      onClick={() => navigate(`/communication?supplier=${encodeURIComponent(supplier.name)}&country=${encodeURIComponent(supplier.country)}&volume=${encodeURIComponent(supplier.volume)}&trend=${encodeURIComponent(supplier.trend)}&risk=${encodeURIComponent(supplier.financialRisk)}`)}
                     >
                       <td className="py-4 px-4">
                         <div className="flex items-center gap-3">
