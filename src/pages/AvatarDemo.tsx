@@ -51,27 +51,12 @@ const AvatarDemo = () => {
           </div>
 
           <Card className="p-8 mb-6">
-            <div className="aspect-video bg-gradient-to-br from-primary via-primary to-accent/20 rounded-xl flex items-center justify-center mb-4">
-              <div className="text-center">
-                <div className="w-24 h-24 rounded-full bg-gradient-orange mx-auto mb-4 flex items-center justify-center shadow-elegant">
-                  <Sparkles className="w-12 h-12 text-white" />
-                </div>
-                <h3 className="text-2xl font-light text-white mb-2">Beyond Presence AI Avatar</h3>
-                <p className="text-white/80">Interactive negotiation guidance</p>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <Button 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground"
-                onClick={() => {
-                  const beyondPresenceUrl = `https://app.beyondpresence.io/agent?key=sk-oJCDoRk6yXQFzBIOn_iv8YvHOQrBntj5yTZcBn6PucM`;
-                  window.open(beyondPresenceUrl, '_blank');
-                }}
-              >
-                Launch Live Demo
-              </Button>
-            </div>
+            <iframe
+              src="https://app.beyondpresence.io/agent?key=sk-oJCDoRk6yXQFzBIOn_iv8YvHOQrBntj5yTZcBn6PucM"
+              className="w-full aspect-video rounded-xl"
+              allow="microphone; camera"
+              title="Beyond Presence AI Avatar"
+            />
           </Card>
 
           <Card className="p-6">
