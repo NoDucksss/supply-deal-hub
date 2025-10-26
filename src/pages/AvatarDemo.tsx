@@ -85,7 +85,8 @@ const AvatarDemo = () => {
               {chatMessages.map((msg, index) => (
                 <div
                   key={index}
-                  className={`flex gap-3 animate-scale-in ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                  className={`flex gap-3 animate-fade-in ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {msg.role === "assistant" && (
                     <div className="w-10 h-10 rounded-full bg-gradient-orange flex items-center justify-center flex-shrink-0">
