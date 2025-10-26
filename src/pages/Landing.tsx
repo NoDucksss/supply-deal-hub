@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Play, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import goatLogo from "@/assets/goat-logo.png";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -71,17 +70,13 @@ const Landing = () => {
             <h1 className="text-7xl md:text-9xl font-light mb-6 tracking-tight text-white">
               NegoatAI
             </h1>
-            <p className="text-2xl md:text-4xl text-white/90 font-light flex items-center justify-center gap-2">
+            <p className="text-2xl md:text-4xl text-white/90 font-light">
               The{" "}
               <span className="inline-block transition-all duration-500 ease-in-out">
                 {showGoatLogo ? (
-                  <img 
-                    src={goatLogo} 
-                    alt="Goat logo" 
-                    className="w-16 h-16 md:w-20 md:h-20 inline-block animate-pulse brightness-0 invert"
-                  />
+                  <span className="text-5xl md:text-6xl animate-pulse">🐐</span>
                 ) : (
-                  <span className="text-2xl md:text-4xl">Goat</span>
+                  "Goat"
                 )}
               </span>{" "}
               of Negotiation
