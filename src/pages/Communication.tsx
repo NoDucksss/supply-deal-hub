@@ -219,7 +219,8 @@ const Communication = () => {
 
             <TabsContent value="history">
               <Card className="p-8">
-                <h2 className="text-xl font-medium mb-6">AI Agent Conversation History</h2>
+                <h2 className="text-xl font-medium mb-6">Beyond Presence AI Agent Conversations</h2>
+                <p className="text-sm text-muted-foreground mb-6">Conversation transcripts received via email after each session</p>
                 
                 <div className="space-y-6">
                   <Card className="p-6 bg-muted/30">
@@ -229,44 +230,26 @@ const Communication = () => {
                           <MessageSquare className="w-5 h-5 text-accent" />
                         </div>
                         <div>
-                          <p className="font-medium">Negotiation Session - Payment Terms</p>
-                          <p className="text-sm text-muted-foreground">March 15, 2024 • 14:32</p>
+                          <p className="font-medium">Pricing & Volume Negotiation</p>
+                          <p className="text-sm text-muted-foreground">Today at 2:43 PM</p>
                         </div>
                       </div>
-                      <Badge variant="outline" className="border-success text-success">Completed</Badge>
+                      <Badge variant="outline" className="border-success text-success">Recent</Badge>
                     </div>
-                    <div className="pl-13 space-y-3">
-                      <p className="text-sm text-muted-foreground">
-                        Discussed extending payment terms from 30 to 60 days. Agent provided market benchmarks and suggested negotiation strategies based on supplier's financial position.
-                      </p>
-                      <div className="flex gap-2">
-                        <Badge variant="secondary" className="text-xs">Payment Terms</Badge>
-                        <Badge variant="secondary" className="text-xs">Negotiation Strategy</Badge>
+                    <div className="mt-4 space-y-3 bg-background/50 rounded-lg p-4">
+                      <div className="space-y-2">
+                        <p className="text-sm"><strong className="text-accent">You:</strong> What are your best terms for a bulk order of 10,000 units?</p>
+                        <p className="text-sm"><strong className="text-primary">Beyond Presence Agent:</strong> For an order of 10,000 units, we can offer a 15% discount on our standard pricing of $45 per unit, bringing it down to $38.25 per unit. Additionally, we can provide Net 60 payment terms and free shipping.</p>
+                        <p className="text-sm"><strong className="text-accent">You:</strong> Can we negotiate on the payment terms to Net 90?</p>
+                        <p className="text-sm"><strong className="text-primary">Beyond Presence Agent:</strong> I can offer Net 75 payment terms for this volume. Would that work for your purchasing timeline?</p>
+                        <p className="text-sm"><strong className="text-accent">You:</strong> That works. When can we finalize this?</p>
+                        <p className="text-sm"><strong className="text-primary">Beyond Presence Agent:</strong> I'll prepare the quote and contract documents. You should receive them via email within the next 2 hours.</p>
                       </div>
                     </div>
-                  </Card>
-
-                  <Card className="p-6 bg-muted/30">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                          <MessageSquare className="w-5 h-5 text-accent" />
-                        </div>
-                        <div>
-                          <p className="font-medium">Risk Assessment Review</p>
-                          <p className="text-sm text-muted-foreground">March 12, 2024 • 10:15</p>
-                        </div>
-                      </div>
-                      <Badge variant="outline" className="border-success text-success">Completed</Badge>
-                    </div>
-                    <div className="pl-13 space-y-3">
-                      <p className="text-sm text-muted-foreground">
-                        Agent analyzed supplier's financial health, certification status, and delivery performance. Provided insights on potential risks and mitigation strategies.
-                      </p>
-                      <div className="flex gap-2">
-                        <Badge variant="secondary" className="text-xs">Risk Analysis</Badge>
-                        <Badge variant="secondary" className="text-xs">Due Diligence</Badge>
-                      </div>
+                    <div className="flex gap-2 mt-4">
+                      <Badge variant="secondary" className="text-xs">Pricing</Badge>
+                      <Badge variant="secondary" className="text-xs">Bulk Order</Badge>
+                      <Badge variant="secondary" className="text-xs">Payment Terms</Badge>
                     </div>
                   </Card>
 
@@ -277,20 +260,54 @@ const Communication = () => {
                           <MessageSquare className="w-5 h-5 text-accent" />
                         </div>
                         <div>
-                          <p className="font-medium">Contract Optimization Session</p>
-                          <p className="text-sm text-muted-foreground">March 8, 2024 • 16:45</p>
+                          <p className="font-medium">Delivery Timeline & Stock Inquiry</p>
+                          <p className="text-sm text-muted-foreground">December 18, 2024 at 11:20 AM</p>
                         </div>
                       </div>
-                      <Badge variant="outline" className="border-success text-success">Completed</Badge>
+                      <Badge variant="outline">Completed</Badge>
                     </div>
-                    <div className="pl-13 space-y-3">
-                      <p className="text-sm text-muted-foreground">
-                        Reviewed existing contract terms and identified 6 negotiable clauses. Agent suggested volume discount opportunities worth €240K annually.
-                      </p>
-                      <div className="flex gap-2">
-                        <Badge variant="secondary" className="text-xs">Contract Review</Badge>
-                        <Badge variant="secondary" className="text-xs">Cost Optimization</Badge>
+                    <div className="mt-4 space-y-3 bg-background/50 rounded-lg p-4">
+                      <div className="space-y-2">
+                        <p className="text-sm"><strong className="text-accent">You:</strong> What's the current lead time for automotive components?</p>
+                        <p className="text-sm"><strong className="text-primary">Beyond Presence Agent:</strong> Current lead time is 6-8 weeks for standard automotive components. For expedited orders, we can deliver in 4 weeks with a 10% premium.</p>
+                        <p className="text-sm"><strong className="text-accent">You:</strong> Do you have any stock available for immediate shipment?</p>
+                        <p className="text-sm"><strong className="text-primary">Beyond Presence Agent:</strong> Yes, we have 2,500 units in stock available for immediate shipment. I can reserve these for you if needed.</p>
+                        <p className="text-sm"><strong className="text-accent">You:</strong> Please reserve 2,000 units for us.</p>
+                        <p className="text-sm"><strong className="text-primary">Beyond Presence Agent:</strong> I've reserved 2,000 units under your account. They'll be held for 72 hours pending your purchase order.</p>
                       </div>
+                    </div>
+                    <div className="flex gap-2 mt-4">
+                      <Badge variant="secondary" className="text-xs">Delivery</Badge>
+                      <Badge variant="secondary" className="text-xs">Logistics</Badge>
+                      <Badge variant="secondary" className="text-xs">Stock</Badge>
+                    </div>
+                  </Card>
+
+                  <Card className="p-6 bg-muted/30">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                          <MessageSquare className="w-5 h-5 text-accent" />
+                        </div>
+                        <div>
+                          <p className="font-medium">Technical Specifications Review</p>
+                          <p className="text-sm text-muted-foreground">December 15, 2024 at 3:15 PM</p>
+                        </div>
+                      </div>
+                      <Badge variant="outline">Completed</Badge>
+                    </div>
+                    <div className="mt-4 space-y-3 bg-background/50 rounded-lg p-4">
+                      <div className="space-y-2">
+                        <p className="text-sm"><strong className="text-accent">You:</strong> Can you provide detailed specs for part #AUT-2024-XR?</p>
+                        <p className="text-sm"><strong className="text-primary">Beyond Presence Agent:</strong> Part #AUT-2024-XR specifications: Material - High-grade aluminum alloy, Dimensions - 150mm x 80mm x 25mm, Weight - 450g, Operating temperature range - -40°C to 125°C, Certifications - ISO 9001, IATF 16949 compliant.</p>
+                        <p className="text-sm"><strong className="text-accent">You:</strong> Perfect, that matches our requirements. What's the minimum order quantity?</p>
+                        <p className="text-sm"><strong className="text-primary">Beyond Presence Agent:</strong> The minimum order quantity is 500 units. For quantities over 1,000 units, we offer tiered pricing discounts.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-2 mt-4">
+                      <Badge variant="secondary" className="text-xs">Technical</Badge>
+                      <Badge variant="secondary" className="text-xs">Specifications</Badge>
+                      <Badge variant="secondary" className="text-xs">Compliance</Badge>
                     </div>
                   </Card>
                 </div>
