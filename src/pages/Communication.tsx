@@ -13,35 +13,39 @@ const Communication = () => {
     <div className="min-h-screen bg-secondary">
       <Navigation />
       
-      <main className="pt-24 pb-12">
-        <div className="container mx-auto px-6">
-          <Button 
-            variant="ghost" 
-            className="mb-6 gap-2"
-            onClick={() => navigate("/dashboard")}
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Dashboard
-          </Button>
+      <main className="pt-20 pb-12">
+        <div className="bg-background border-b border-border sticky top-16 z-10">
+          <div className="container mx-auto px-6 py-4">
+            <Button 
+              variant="ghost" 
+              className="mb-4 gap-2"
+              onClick={() => navigate("/dashboard")}
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Dashboard
+            </Button>
 
-          <div className="mb-8">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center">
-                <span className="text-2xl">⚡</span>
+            <div className="mb-4">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <div>
+                  <h1 className="text-3xl font-light mb-1">Bergmann & Söhne GmbH</h1>
+                  <p className="text-muted-foreground">🇩🇪 Germany • Volume (last 6 months): 4.8M € ↑ 30%</p>
+                </div>
               </div>
-              <div>
-                <h1 className="text-3xl font-light mb-1">Bergmann & Söhne GmbH</h1>
-                <p className="text-muted-foreground">🇩🇪 Germany • Volume (last 6 months): 4.8M € ↑ 30%</p>
+              
+              <div className="flex items-center gap-2">
+                <Badge variant="outline" className="border-success text-success">LOW RISK</Badge>
               </div>
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <Badge variant="outline" className="border-success text-success">LOW RISK</Badge>
             </div>
           </div>
+        </div>
 
+        <div className="container mx-auto px-6 pt-6">
           <Tabs defaultValue="communication" className="w-full">
-            <TabsList className="mb-6">
+            <TabsList className="mb-6 bg-background">
               <TabsTrigger value="communication">Supplier Communication</TabsTrigger>
               <TabsTrigger value="trends">Trends & Dashboard</TabsTrigger>
               <TabsTrigger value="history">Conversation History</TabsTrigger>
