@@ -57,6 +57,8 @@ This dataset enables dynamic testing of AI negotiation strategy recommendations.
 - 💻 **Frontend** – developed using [Lovable](#) for an interactive and intuitive negotiation interface.  
 - 🔗 **Beyond Presence API** – enables **live supplier video-call integration**, allowing the AI assistant to appear dynamically during supplier negotiations.
 
+Here is a sample image <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/34782f87-041c-48eb-ad34-de327640f9de" />
+
 ---
 
 ## 🤝 Partner Technologies  
