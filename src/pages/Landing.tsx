@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Play, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import goatSilhouette from "@/assets/goat-silhouette.png";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -74,7 +75,11 @@ const Landing = () => {
               The{" "}
               <span className="inline-block transition-all duration-500 ease-in-out">
                 {showGoatLogo ? (
-                  <span className="text-5xl md:text-6xl animate-pulse">🐐</span>
+                  <img 
+                    src={goatSilhouette} 
+                    alt="Goat silhouette" 
+                    className="inline-block w-12 h-12 md:w-16 md:h-16 brightness-0 invert animate-pulse"
+                  />
                 ) : (
                   "Goat"
                 )}
