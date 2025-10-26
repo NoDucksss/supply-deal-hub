@@ -70,7 +70,7 @@ const AvatarDemo = () => {
               </div>
             ) : (
               <iframe
-                src="https://bey.chat/343f7414-ed62-4ab5-be1f-c02c5a223eee"
+                src="https://bey.chat/5de788d0-bb18-4785-9b93-577839aee9ae"
                 className="w-full aspect-video rounded-xl"
                 allow="microphone; camera"
                 title="Beyond Presence AI Avatar"
