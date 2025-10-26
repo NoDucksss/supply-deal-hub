@@ -124,7 +124,7 @@ const Landing = () => {
         <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-[#a94442] via-[#f19c93] to-[#b8d4e0]">
           {/* Fluid Background Effect */}
           <div
-            className="absolute inset-0 opacity-90 transition-all duration-1000 ease-out"
+            className="absolute inset-0 opacity-90 transition-all duration-300 ease-out"
             style={{
               background: `
                 radial-gradient(circle 900px at ${mousePosition.x}px ${mousePosition.y}px, 
