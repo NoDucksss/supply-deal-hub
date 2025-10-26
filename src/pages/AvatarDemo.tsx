@@ -62,7 +62,15 @@ const AvatarDemo = () => {
             </div>
             
             <div className="text-center">
-              <Badge className="bg-accent text-accent-foreground">Live Demo Mode</Badge>
+              <Button 
+                className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                onClick={() => {
+                  const beyondPresenceUrl = `https://app.beyondpresence.io/agent?key=sk-oJCDoRk6yXQFzBIOn_iv8YvHOQrBntj5yTZcBn6PucM`;
+                  window.open(beyondPresenceUrl, '_blank');
+                }}
+              >
+                Launch Live Demo
+              </Button>
             </div>
           </Card>
 
