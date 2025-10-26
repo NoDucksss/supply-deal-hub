@@ -10,50 +10,64 @@ const Communication = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-secondary">
+    <div className="min-h-screen bg-background">
       <Navigation />
       
-      <main className="pt-20 pb-12">
-        <div className="bg-background border-b border-border sticky top-16 z-10">
-          <div className="container mx-auto px-6 py-4">
+      <main className="pt-20">
+        {/* Header Section */}
+        <div className="bg-secondary/30 px-6 py-8 mb-8">
+          <div className="container mx-auto">
             <Button 
               variant="ghost" 
-              className="mb-4 gap-2"
+              className="mb-6 gap-2 -ml-2"
               onClick={() => navigate("/dashboard")}
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Dashboard
             </Button>
 
-            <div className="mb-4">
-              <div className="flex items-center gap-4 mb-3">
-                <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <span className="text-2xl">⚡</span>
-                </div>
-                <div>
-                  <h1 className="text-3xl font-light mb-1">Bergmann & Söhne GmbH</h1>
-                  <p className="text-muted-foreground">🇩🇪 Germany • Volume (last 6 months): 4.8M € ↑ 30%</p>
-                </div>
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-20 h-20 rounded-2xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <span className="text-3xl">⚡</span>
               </div>
-              
-              <div className="flex items-center gap-2">
-                <Badge variant="outline" className="border-success text-success">LOW RISK</Badge>
+              <div>
+                <h1 className="text-4xl font-light mb-2">Bergmann & Söhne GmbH</h1>
+                <p className="text-muted-foreground text-lg">🇩🇪 Germany • Volume (last 6 months): 4.8M € ↑ 30%</p>
               </div>
             </div>
+            
+            <Badge variant="outline" className="border-success text-success bg-success/5">LOW RISK</Badge>
           </div>
         </div>
 
-        <div className="container mx-auto px-6 pt-6">
-          <Tabs defaultValue="communication" className="w-full">
-            <TabsList className="mb-6 bg-background">
-              <TabsTrigger value="communication">Supplier Communication</TabsTrigger>
-              <TabsTrigger value="trends">Trends & Dashboard</TabsTrigger>
-              <TabsTrigger value="history">Conversation History</TabsTrigger>
-            </TabsList>
+        {/* Tabs Section */}
+        <div className="bg-background border-b border-border">
+          <div className="container mx-auto px-6">
+            <Tabs defaultValue="communication" className="w-full">
+              <TabsList className="bg-transparent border-b-0 h-auto p-0 gap-8">
+                <TabsTrigger 
+                  value="communication" 
+                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-foreground data-[state=active]:bg-transparent px-0 pb-4"
+                >
+                  Supplier Communication
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="trends"
+                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-foreground data-[state=active]:bg-transparent px-0 pb-4"
+                >
+                  Trends & Dashboard
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="history"
+                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-foreground data-[state=active]:bg-transparent px-0 pb-4"
+                >
+                  Conversation History
+                </TabsTrigger>
+              </TabsList>
 
-            <TabsContent value="communication">
-              <Card className="p-8">
-                <h2 className="text-xl font-medium mb-6">Recent Communication</h2>
+              <TabsContent value="communication" className="mt-0">
+                <div className="bg-secondary/30 rounded-2xl p-8">
+                  <h2 className="text-2xl font-light mb-8">Recent Communication</h2>
                 
                 <div className="space-y-6">
                   <div className="flex gap-4">
@@ -108,12 +122,12 @@ const Communication = () => {
                       <p className="text-xs text-muted-foreground">4:15 PM</p>
                     </div>
                   </div>
+                  </div>
                 </div>
-              </Card>
-            </TabsContent>
+              </TabsContent>
 
-            <TabsContent value="trends">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+              <TabsContent value="trends" className="mt-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                 <Card className="p-6">
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-lg font-medium">Negotiation Priorities</h3>
@@ -218,13 +232,13 @@ const Communication = () => {
                     </Button>
                   </div>
                 </Card>
-              </div>
-            </TabsContent>
+                </div>
+              </TabsContent>
 
-            <TabsContent value="history">
-              <Card className="p-8">
-                <h2 className="text-xl font-medium mb-6">Beyond Presence AI Agent Conversations</h2>
-                <p className="text-sm text-muted-foreground mb-6">Conversation transcripts received via email after each session</p>
+              <TabsContent value="history" className="mt-0">
+                <div className="bg-secondary/30 rounded-2xl p-8">
+                  <h2 className="text-2xl font-light mb-2">Beyond Presence AI Agent Conversations</h2>
+                  <p className="text-sm text-muted-foreground mb-8">Conversation transcripts received via email after each session</p>
                 
                 <div className="space-y-6">
                   <Card className="p-6 bg-muted/30">
@@ -314,10 +328,11 @@ const Communication = () => {
                       <Badge variant="secondary" className="text-xs">Compliance</Badge>
                     </div>
                   </Card>
+                  </div>
                 </div>
-              </Card>
-            </TabsContent>
-          </Tabs>
+              </TabsContent>
+            </Tabs>
+          </div>
         </div>
       </main>
     </div>
