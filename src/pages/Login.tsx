@@ -20,7 +20,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#a94442] via-[#f19c93] to-[#b8d4e0]">
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[hsl(188,74%,41%)] to-[hsl(195,53%,79%)]">
       <RippleBackground />
       
       <div className="relative z-10 w-full max-w-md mx-4">

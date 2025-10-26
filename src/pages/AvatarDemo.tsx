@@ -33,7 +33,7 @@ const AvatarDemo = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#a94442] via-[#f19c93] to-[#b8d4e0] relative">
+    <div className="min-h-screen bg-gradient-to-br from-[hsl(188,74%,41%)] to-[hsl(195,53%,79%)] relative">
       <RippleBackground />
       <Navigation />
       
