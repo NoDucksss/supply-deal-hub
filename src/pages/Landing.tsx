@@ -32,19 +32,37 @@ const Landing = () => {
       
       <main>
         {/* Hero Section with Mouse Tracking */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-pink-900 to-orange-900">
+          {/* Fluid Background Effect */}
           <div
-            className="absolute inset-0 opacity-30 transition-all duration-300 ease-out"
+            className="absolute inset-0 opacity-80 transition-all duration-700 ease-out"
             style={{
-              background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, hsl(var(--primary) / 0.15), transparent 50%)`,
+              background: `
+                radial-gradient(circle 800px at ${mousePosition.x}px ${mousePosition.y}px, 
+                  rgba(236, 72, 153, 0.6),
+                  rgba(219, 39, 119, 0.4) 30%,
+                  transparent 70%),
+                radial-gradient(circle 600px at ${mousePosition.x * 0.8}px ${mousePosition.y * 0.9}px,
+                  rgba(59, 130, 246, 0.5),
+                  rgba(37, 99, 235, 0.3) 40%,
+                  transparent 70%),
+                radial-gradient(circle 700px at ${mousePosition.x * 1.2}px ${mousePosition.y * 0.7}px,
+                  rgba(251, 146, 60, 0.5),
+                  rgba(249, 115, 22, 0.3) 35%,
+                  transparent 65%)
+              `,
+              filter: 'blur(80px)',
             }}
           />
           
-          <div className="relative z-10 text-center px-6">
-            <h1 className="text-7xl md:text-9xl font-light mb-6 tracking-tight">
-              NegoAI
+          {/* Overlay gradient for depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-black/40" />
+          
+          <div className="relative z-10 text-center px-6 font-morne">
+            <h1 className="text-7xl md:text-9xl font-light mb-6 tracking-tight text-white">
+              NegoatAI
             </h1>
-            <p className="text-2xl md:text-4xl text-muted-foreground font-light">
+            <p className="text-2xl md:text-4xl text-white/90 font-light">
               The Goat of Negotiation
             </p>
           </div>
