@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import RippleBackground from "@/components/RippleBackground";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -18,10 +19,11 @@ const Communication = () => {
   const supplierRisk = searchParams.get("risk") || "LOW RISK";
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#a94442] via-[#f19c93] to-[#b8d4e0]">
+    <div className="min-h-screen bg-gradient-to-br from-[#a94442] via-[#f19c93] to-[#b8d4e0] relative">
+      <RippleBackground />
       <Navigation />
       
-      <main className="pt-20">
+      <main className="pt-20 relative z-10">
         {/* Header Section */}
         <div className="backdrop-blur-md bg-white/10 border-white/20 border-b px-6 py-8 mb-8">
           <div className="container mx-auto">

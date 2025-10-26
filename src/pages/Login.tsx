@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RippleBackground from "@/components/RippleBackground";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
@@ -20,6 +21,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#a94442] via-[#f19c93] to-[#b8d4e0]">
+      <RippleBackground />
       
       <div className="relative z-10 w-full max-w-md mx-4">
         <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-12 shadow-elegant">
