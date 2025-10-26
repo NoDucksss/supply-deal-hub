@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, FileText, TrendingUp, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, FileText, TrendingUp, AlertTriangle, CheckCircle2, MessageSquare } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Communication = () => {
@@ -44,6 +44,7 @@ const Communication = () => {
             <TabsList className="mb-6">
               <TabsTrigger value="communication">Supplier Communication</TabsTrigger>
               <TabsTrigger value="trends">Trends & Dashboard</TabsTrigger>
+              <TabsTrigger value="history">Conversation History</TabsTrigger>
             </TabsList>
 
             <TabsContent value="communication">
@@ -214,6 +215,86 @@ const Communication = () => {
                   </div>
                 </Card>
               </div>
+            </TabsContent>
+
+            <TabsContent value="history">
+              <Card className="p-8">
+                <h2 className="text-xl font-medium mb-6">AI Agent Conversation History</h2>
+                
+                <div className="space-y-6">
+                  <Card className="p-6 bg-muted/30">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                          <MessageSquare className="w-5 h-5 text-accent" />
+                        </div>
+                        <div>
+                          <p className="font-medium">Negotiation Session - Payment Terms</p>
+                          <p className="text-sm text-muted-foreground">March 15, 2024 • 14:32</p>
+                        </div>
+                      </div>
+                      <Badge variant="outline" className="border-success text-success">Completed</Badge>
+                    </div>
+                    <div className="pl-13 space-y-3">
+                      <p className="text-sm text-muted-foreground">
+                        Discussed extending payment terms from 30 to 60 days. Agent provided market benchmarks and suggested negotiation strategies based on supplier's financial position.
+                      </p>
+                      <div className="flex gap-2">
+                        <Badge variant="secondary" className="text-xs">Payment Terms</Badge>
+                        <Badge variant="secondary" className="text-xs">Negotiation Strategy</Badge>
+                      </div>
+                    </div>
+                  </Card>
+
+                  <Card className="p-6 bg-muted/30">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                          <MessageSquare className="w-5 h-5 text-accent" />
+                        </div>
+                        <div>
+                          <p className="font-medium">Risk Assessment Review</p>
+                          <p className="text-sm text-muted-foreground">March 12, 2024 • 10:15</p>
+                        </div>
+                      </div>
+                      <Badge variant="outline" className="border-success text-success">Completed</Badge>
+                    </div>
+                    <div className="pl-13 space-y-3">
+                      <p className="text-sm text-muted-foreground">
+                        Agent analyzed supplier's financial health, certification status, and delivery performance. Provided insights on potential risks and mitigation strategies.
+                      </p>
+                      <div className="flex gap-2">
+                        <Badge variant="secondary" className="text-xs">Risk Analysis</Badge>
+                        <Badge variant="secondary" className="text-xs">Due Diligence</Badge>
+                      </div>
+                    </div>
+                  </Card>
+
+                  <Card className="p-6 bg-muted/30">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                          <MessageSquare className="w-5 h-5 text-accent" />
+                        </div>
+                        <div>
+                          <p className="font-medium">Contract Optimization Session</p>
+                          <p className="text-sm text-muted-foreground">March 8, 2024 • 16:45</p>
+                        </div>
+                      </div>
+                      <Badge variant="outline" className="border-success text-success">Completed</Badge>
+                    </div>
+                    <div className="pl-13 space-y-3">
+                      <p className="text-sm text-muted-foreground">
+                        Reviewed existing contract terms and identified 6 negotiable clauses. Agent suggested volume discount opportunities worth €240K annually.
+                      </p>
+                      <div className="flex gap-2">
+                        <Badge variant="secondary" className="text-xs">Contract Review</Badge>
+                        <Badge variant="secondary" className="text-xs">Cost Optimization</Badge>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+              </Card>
             </TabsContent>
           </Tabs>
         </div>
