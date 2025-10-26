@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Play, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import goatLogo from "@/assets/goat-logo.png";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -120,11 +119,7 @@ const Landing = () => {
                   {typedText.split("Goat")[0]}
                   <span className="inline-flex items-center transition-all duration-500 ease-in-out">
                     {showGoatLogo ? (
-                      <img 
-                        src={goatLogo} 
-                        alt="Goat" 
-                        className="h-10 md:h-14 w-auto brightness-0 invert"
-                      />
+                      <span className="text-4xl md:text-5xl">🐐</span>
                     ) : (
                       "Goat"
                     )}
