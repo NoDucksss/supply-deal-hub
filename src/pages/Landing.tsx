@@ -182,7 +182,7 @@ const Landing = () => {
 
         {/* Existing Content */}
         <div id="content">
-          <section className="container mx-auto px-6 py-20 md:py-32">
+          <section className="container mx-auto px-6 py-20 md:py-32 bg-primary/5">
             <div className="max-w-4xl">
               <h2 className="text-5xl md:text-7xl font-light leading-tight mb-8">
                 Accelerate procurement negotiations with AI-powered intelligence
@@ -214,7 +214,7 @@ const Landing = () => {
 
           <IndustryCarousel />
 
-          <section className="bg-background py-20">
+          <section className="bg-primary/5 py-20">
             <div className="container mx-auto px-6">
               <h2 className="text-4xl md:text-5xl font-light text-center mb-16 min-h-[4rem] flex items-center justify-center gap-2">
                 {supplierText}
