@@ -8,7 +8,8 @@ import { useState, useEffect } from "react";
 const Landing = () => {
   const navigate = useNavigate();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [showGoatLogo, setShowGoatLogo] = useState(true);
+  const [typedText, setTypedText] = useState("");
+  const fullText = "The Goat of Negotiation";
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -20,10 +21,16 @@ const Landing = () => {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setShowGoatLogo((prev) => !prev);
-    }, 2000);
-    return () => clearInterval(interval);
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index <= fullText.length) {
+        setTypedText(fullText.slice(0, index));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 100);
+    return () => clearInterval(typingInterval);
   }, []);
 
   const scrollToContent = () => {
@@ -70,16 +77,9 @@ const Landing = () => {
             <h1 className="text-7xl md:text-9xl font-light mb-6 tracking-tight text-white">
               NegoatAI
             </h1>
-            <p className="text-2xl md:text-4xl text-white/90 font-light">
-              The{" "}
-              <span className="inline-block transition-all duration-500 ease-in-out">
-                {showGoatLogo ? (
-                  <span className="text-5xl md:text-6xl animate-pulse">🐐</span>
-                ) : (
-                  "Goat"
-                )}
-              </span>{" "}
-              of Negotiation
+            <p className="text-2xl md:text-4xl text-white/90 font-light min-h-[3rem] md:min-h-[4rem]">
+              {typedText}
+              <span className="animate-pulse">|</span>
             </p>
           </div>
 
