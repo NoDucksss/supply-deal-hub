@@ -4,11 +4,14 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Play, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import goatLogo from "@/assets/goat-logo.png";
 
 const Landing = () => {
   const navigate = useNavigate();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [typedText, setTypedText] = useState("");
+  const [showGoatLogo, setShowGoatLogo] = useState(true);
+  const [isTyping, setIsTyping] = useState(true);
   const fullText = "The Goat of Negotiation";
 
   useEffect(() => {
@@ -21,15 +24,49 @@ const Landing = () => {
   }, []);
 
   useEffect(() => {
+    const interval = setInterval(() => {
+      setShowGoatLogo((prev) => !prev);
+    }, 1500);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
     let index = 0;
-    const typingInterval = setInterval(() => {
-      if (index <= fullText.length) {
-        setTypedText(fullText.slice(0, index));
-        index++;
-      } else {
-        clearInterval(typingInterval);
-      }
-    }, 100);
+    let typingInterval: NodeJS.Timeout;
+    
+    const startTyping = () => {
+      setIsTyping(true);
+      typingInterval = setInterval(() => {
+        if (index <= fullText.length) {
+          setTypedText(fullText.slice(0, index));
+          index++;
+        } else {
+          clearInterval(typingInterval);
+          // Wait 2 seconds before erasing
+          setTimeout(startErasing, 2000);
+        }
+      }, 80);
+    };
+
+    const startErasing = () => {
+      setIsTyping(false);
+      typingInterval = setInterval(() => {
+        if (index >= 0) {
+          setTypedText(fullText.slice(0, index));
+          index--;
+        } else {
+          clearInterval(typingInterval);
+          // Wait 1 second before typing again
+          setTimeout(() => {
+            index = 0;
+            startTyping();
+          }, 1000);
+        }
+      }, 50);
+    };
+
+    startTyping();
+
     return () => clearInterval(typingInterval);
   }, []);
 
@@ -77,8 +114,26 @@ const Landing = () => {
             <h1 className="text-7xl md:text-9xl font-light mb-6 tracking-tight text-white">
               NegoatAI
             </h1>
-            <p className="text-2xl md:text-4xl text-white/90 font-light min-h-[3rem] md:min-h-[4rem]">
-              {typedText}
+            <p className="text-2xl md:text-4xl text-white/90 font-light min-h-[3rem] md:min-h-[4rem] flex items-center justify-center gap-2">
+              {typedText.includes("Goat") ? (
+                <>
+                  {typedText.split("Goat")[0]}
+                  <span className="inline-flex items-center transition-all duration-500 ease-in-out">
+                    {showGoatLogo ? (
+                      <img 
+                        src={goatLogo} 
+                        alt="Goat" 
+                        className="h-10 md:h-14 w-auto brightness-0 invert"
+                      />
+                    ) : (
+                      "Goat"
+                    )}
+                  </span>
+                  {typedText.split("Goat")[1]}
+                </>
+              ) : (
+                typedText
+              )}
               <span className="animate-pulse">|</span>
             </p>
           </div>
