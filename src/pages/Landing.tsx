@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 const Landing = () => {
   const navigate = useNavigate();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [ripples, setRipples] = useState<Array<{ x: number; y: number; id: number }>>([]);
   const [typedText, setTypedText] = useState("");
   const [showGoatLogo, setShowGoatLogo] = useState(true);
   const [isTyping, setIsTyping] = useState(true);
@@ -18,6 +19,15 @@ const Landing = () => {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      
+      // Create ripple effect
+      const newRipple = { x: e.clientX, y: e.clientY, id: Date.now() };
+      setRipples(prev => [...prev, newRipple]);
+      
+      // Remove ripple after animation completes
+      setTimeout(() => {
+        setRipples(prev => prev.filter(r => r.id !== newRipple.id));
+      }, 1500);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -122,9 +132,32 @@ const Landing = () => {
       <main>
         {/* Hero Section with Mouse Tracking */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-[#a94442] via-[#f19c93] to-[#b8d4e0]">
+          {/* Ripple Effects */}
+          {ripples.map(ripple => (
+            <div
+              key={ripple.id}
+              className="absolute pointer-events-none"
+              style={{
+                left: ripple.x,
+                top: ripple.y,
+                transform: 'translate(-50%, -50%)',
+              }}
+            >
+              <div 
+                className="absolute inset-0 rounded-full"
+                style={{
+                  width: '0px',
+                  height: '0px',
+                  background: 'radial-gradient(circle, rgba(169, 68, 66, 0.4) 0%, transparent 70%)',
+                  animation: 'ripple 1.5s ease-out forwards',
+                }}
+              />
+            </div>
+          ))}
+
           {/* Fluid Background Effect */}
           <div
-            className="absolute inset-0 opacity-90 transition-all duration-300 ease-out"
+            className="absolute inset-0 opacity-90 transition-all duration-500 ease-out"
             style={{
               background: `
                 radial-gradient(circle 900px at ${mousePosition.x}px ${mousePosition.y}px, 
