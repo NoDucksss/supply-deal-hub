@@ -12,6 +12,8 @@ const Landing = () => {
   const [showGoatLogo, setShowGoatLogo] = useState(true);
   const [isTyping, setIsTyping] = useState(true);
   const fullText = "The Goat of Negotiation";
+  const [supplierText, setSupplierText] = useState("");
+  const supplierFullText = "Efficient supplier management";
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -56,6 +58,42 @@ const Landing = () => {
         } else {
           clearInterval(typingInterval);
           // Wait 1 second before typing again
+          setTimeout(() => {
+            index = 0;
+            startTyping();
+          }, 1000);
+        }
+      }, 50);
+    };
+
+    startTyping();
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
+  useEffect(() => {
+    let index = 0;
+    let typingInterval: NodeJS.Timeout;
+    
+    const startTyping = () => {
+      typingInterval = setInterval(() => {
+        if (index <= supplierFullText.length) {
+          setSupplierText(supplierFullText.slice(0, index));
+          index++;
+        } else {
+          clearInterval(typingInterval);
+          setTimeout(startErasing, 2000);
+        }
+      }, 80);
+    };
+
+    const startErasing = () => {
+      typingInterval = setInterval(() => {
+        if (index >= 0) {
+          setSupplierText(supplierFullText.slice(0, index));
+          index--;
+        } else {
+          clearInterval(typingInterval);
           setTimeout(() => {
             index = 0;
             startTyping();
@@ -178,8 +216,9 @@ const Landing = () => {
 
           <section className="bg-background py-20">
             <div className="container mx-auto px-6">
-              <h2 className="text-4xl md:text-5xl font-light text-center mb-16">
-                Efficient supplier management
+              <h2 className="text-4xl md:text-5xl font-light text-center mb-16 min-h-[4rem] flex items-center justify-center gap-2">
+                {supplierText}
+                <span className="animate-pulse">|</span>
               </h2>
               <p className="text-center text-lg text-muted-foreground max-w-3xl mx-auto">
                 Manage all supplier processes in one platform: Data, risks and potentials 
