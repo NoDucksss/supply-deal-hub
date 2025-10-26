@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'morne': ['Montserrat', 'sans-serif'],
+        'morne': ['Cormorant Garamond', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

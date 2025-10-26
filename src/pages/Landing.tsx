@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 const Landing = () => {
   const navigate = useNavigate();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [showGoatLogo, setShowGoatLogo] = useState(true);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -16,6 +17,13 @@ const Landing = () => {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowGoatLogo((prev) => !prev);
+    }, 2000);
+    return () => clearInterval(interval);
   }, []);
 
   const scrollToContent = () => {
@@ -32,38 +40,46 @@ const Landing = () => {
       
       <main>
         {/* Hero Section with Mouse Tracking */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-pink-900 to-orange-900">
+        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-[#a94442] via-[#f19c93] to-[#b8d4e0]">
           {/* Fluid Background Effect */}
           <div
-            className="absolute inset-0 opacity-80 transition-all duration-700 ease-out"
+            className="absolute inset-0 opacity-90 transition-all duration-1000 ease-out"
             style={{
               background: `
-                radial-gradient(circle 800px at ${mousePosition.x}px ${mousePosition.y}px, 
-                  rgba(236, 72, 153, 0.6),
-                  rgba(219, 39, 119, 0.4) 30%,
-                  transparent 70%),
-                radial-gradient(circle 600px at ${mousePosition.x * 0.8}px ${mousePosition.y * 0.9}px,
-                  rgba(59, 130, 246, 0.5),
-                  rgba(37, 99, 235, 0.3) 40%,
-                  transparent 70%),
-                radial-gradient(circle 700px at ${mousePosition.x * 1.2}px ${mousePosition.y * 0.7}px,
-                  rgba(251, 146, 60, 0.5),
-                  rgba(249, 115, 22, 0.3) 35%,
-                  transparent 65%)
+                radial-gradient(circle 900px at ${mousePosition.x}px ${mousePosition.y}px, 
+                  rgba(169, 68, 66, 0.7),
+                  rgba(198, 87, 85, 0.5) 25%,
+                  transparent 60%),
+                radial-gradient(circle 700px at ${mousePosition.x * 0.7}px ${mousePosition.y * 1.1}px,
+                  rgba(241, 156, 147, 0.6),
+                  rgba(243, 176, 169, 0.4) 30%,
+                  transparent 65%),
+                radial-gradient(circle 800px at ${mousePosition.x * 1.3}px ${mousePosition.y * 0.8}px,
+                  rgba(184, 212, 224, 0.6),
+                  rgba(200, 222, 232, 0.4) 35%,
+                  transparent 70%)
               `,
-              filter: 'blur(80px)',
+              filter: 'blur(100px)',
             }}
           />
           
           {/* Overlay gradient for depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10" />
           
           <div className="relative z-10 text-center px-6 font-morne">
             <h1 className="text-7xl md:text-9xl font-light mb-6 tracking-tight text-white">
               NegoatAI
             </h1>
             <p className="text-2xl md:text-4xl text-white/90 font-light">
-              The Goat of Negotiation
+              The{" "}
+              <span className="inline-block transition-all duration-500 ease-in-out">
+                {showGoatLogo ? (
+                  <span className="text-5xl md:text-6xl animate-pulse">🐐</span>
+                ) : (
+                  "Goat"
+                )}
+              </span>{" "}
+              of Negotiation
             </p>
           </div>
 
